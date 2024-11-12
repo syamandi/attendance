@@ -1,0 +1,237 @@
+/* Importing Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+/* Reports dropdown styles */
+.reports-dropdown {
+  position: relative;
+}
+
+.reports-dropdown > a {
+  position: relative;
+}
+
+.reports-dropdown > a::after {
+  content: '\25BC';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8em;
+}
+
+.reports-submenu {
+  list-style: none;
+  padding-left: 20px;
+  max-height: none;
+  overflow: visible;
+}
+
+.reports-submenu li a {
+  padding: 10px 15px 10px 40px;
+  display: flex;
+  align-items: center;
+}
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 240px; /* Default sidebar width */
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background: #161a2d;
+  padding: 25px 15px;
+  transition: all 0.4s ease;
+}
+/* Active link styling */
+.sidebar-links li a.active {
+  color: #161a2d; /* Change text color for active link */
+  background: #f0f2f5; /* Background color for active link */
+  border-radius: 4px; /* Keep the same border radius for consistency */
+}
+
+/* Optional: Add hover effect for active link */
+.sidebar-links li a.active:hover {
+  background: #e0e0e0; /* Slightly different background on hover */
+}
+
+.sidebar:hover {
+  width: 240px; /* Expanded width */
+}
+
+/* Sidebar header */
+.sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .sidebar-header img {
+  width: 40px;
+  margin: 10px 10px;
+  position: relative;
+}
+
+.sidebar .sidebar-header h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* Sidebar links */
+.sidebar-links h4 {
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 10px 0;
+  position: relative;
+}
+
+.sidebar-links h4 span {
+  opacity: 0;
+}
+
+.sidebar:hover .sidebar-links h4 span {
+  opacity: 1;
+}
+
+.sidebar-links .menu-separator {
+  margin-left: -20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #4f52ba;
+  transform: translateY(-50%);
+}
+
+.sidebar:hover .sidebar-links .menu-separator {
+  transition-delay: 0s;
+}
+
+.sidebar-links {
+  list-style: none;
+  margin-top: 20px;
+  height: 80%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.sidebar-links::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-links li a {
+  margin-left: -30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 15px 10px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.sidebar-links li a:hover {
+  color: #161a2d;
+  background: #fff;
+  border-radius: 4px;
+}
+
+
+
+/* Content area */
+.content-wrapper {
+  margin-left: 240px; /* Leave space for sidebar */
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: calc(100% - 240px); /* Take full width minus sidebar */
+  transition: margin-left 0.4s ease;
+  text-align: center;
+  padding: 0 20px; /* Add some padding on the sides */
+}
+
+.sidebar:hover + .content-wrapper {
+  margin-left: 240px; /* Adjust this if sidebar width changes */
+}
+
+.content {
+  width: 100%; /* Allow content to take full width of its container */
+  max-width: 1200px; /* Set a max-width for readability on very wide screens */
+}
+
+/* If you have a table inside .content, you can make it wider like this: */
+.content table {
+  width: 100%; /* Make the table take full width of .content */
+  max-width: 100%; /* Ensure table doesn't overflow its container */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin-left: 70px; /* Adjust for collapsed sidebar */
+    width: calc(100% - 70px); /* Adjust for collapsed sidebar */
+    padding: 0 10px; /* Reduce padding on smaller screens */
+  }
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 65px; /* Collapsed width for mobile */
+    padding-right: 10%;
+  }
+
+  .sidebar:hover {
+    width: 70px; /* Keep collapsed width on hover */
+  }
+  .sidebar-header{
+    margin-left: -13px;
+  }
+  .sidebar-header h2{
+   display: none;
+  }
+  .sidebar-links {
+    overflow: hidden; /* Prevent scrolling */
+   
+  }
+
+  .sidebar-links li a {
+    justify-content: center; /* Center align icons */
+  }
+
+  .sidebar-links .link-text { 
+    display: none; /* Hide text on mobile */
+  }
+
+  .content-wrapper {
+    margin-left: 65px; /* Adjust for collapsed sidebar */
+    width: calc(100% - 70px); /* Adjust for collapsed sidebar */
+  }
+
+ 
+}
