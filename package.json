@@ -12,15 +12,9 @@
     },
     "dependencies": {
         "air-datepicker": "^3.5.3"
-    },
+    }
 
     
-    "builds": 
-          {
-            "src": "package.json",
-            "use": "@vercel/static-build"
-            
-          }
-        
+    
       
 }
