@@ -266,7 +266,7 @@
 }
 
     }
-     /* Hide the logo in the normal view */
+     
      .print-logo,.print-title {
         display: none;
     }
